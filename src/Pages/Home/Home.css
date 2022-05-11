@@ -1,0 +1,23 @@
+.bannar {
+    width: 100%;
+}
+
+.banner-text {
+    color: blue;
+    margin-top: 170px;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.banner-section {
+    align-items: center;
+    background-image: url(https://img.freepik.com/free-psd/smartphone-with-login-page-colorful-liquid-background_23-2148215467.jpg?t=st=1652249999~exp=1652250599~hmac=d5c8907ffc9f675d61ad7542eed49e8efac63908e401d1d563bbe9de18698315&w=826);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: flex; */
+    height: 600px;
+    width: 100%;
+    opacity: 0.8;
+}
