@@ -45,7 +45,6 @@ const ProdictsDetails = () => {
 
     }
 
-
     const handleQuantitySubmit = (event) => {
 
         event.preventDefault()
@@ -61,7 +60,7 @@ const ProdictsDetails = () => {
                 "content-type": "application/json",
             },
             body: JSON.stringify(updateQuantity)
-            // body: JSON.stringify(updateQuantity)
+
         })
 
             .then((res) => res.json())
