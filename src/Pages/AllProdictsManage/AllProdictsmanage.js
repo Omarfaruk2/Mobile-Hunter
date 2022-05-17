@@ -5,7 +5,6 @@ import ManageAllProducts from '../ManageAllProducts/ManageAllProducts'
 
 const AllProdictsmanage = () => {
     const [products] = useInventory()
-    // console.log(products)
 
     if (products.length === 0) {
         return (
