@@ -4,7 +4,7 @@ import "./Myitems.css"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init'
 // import Myitem from '../Myitem/Myitem'
-import { Table } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const MyItems = () => {
@@ -52,7 +52,7 @@ const MyItems = () => {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Supplier</th>
-                        <th>Updata</th>
+                        <th>Update</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -64,8 +64,8 @@ const MyItems = () => {
                                 <td>{item?.Price}</td>
                                 <td>{item?.quantity}</td>
                                 <td>{item?.supliarName}</td>
-                                <td><button onClick={() => handleDetailsitem(item?._id)}>Update</button></td>
-                                <td><button onClick={() => handleDeleteditems(item?._id)}>Delete</button></td>
+                                <td><Button variant="outline-info" onClick={() => handleDetailsitem(item?._id)}>Update</Button></td>
+                                <td><Button variant="outline-danger" onClick={() => handleDeleteditems(item?._id)}>Delete</Button></td>
 
                             </tr>
                         )

@@ -13,8 +13,8 @@ const SingleInventory = ({ product }) => {
     }
 
     return (
-        <div className='col-lg-4'>
-            <Card className='mx-auto' style={{ width: '20rem' }}>
+        <div className='col-lg-4 container p-3'>
+            <Card className='mx-auto p-3' style={{ width: '22rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

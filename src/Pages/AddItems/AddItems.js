@@ -1,4 +1,5 @@
 import React from 'react'
+import { Spinner } from 'react-bootstrap'
 
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
@@ -8,9 +9,21 @@ import "./AddItems.css"
 
 
 const AddItems = () => {
-    const [user, loading, error] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
+
     const navigate = useNavigate()
     const { register, handleSubmit } = useForm()
+
+
+    if (loading) {
+        return (
+            <div className='loginSpiner g-3'>
+                <Spinner className='mx-2' animation="grow" variant="primary" />
+                <Spinner className='mx-2' animation="grow" variant="info" />
+                <Spinner className='mx-2' animation="grow" variant="warning" />
+            </div>
+        )
+    }
 
     const onSubmit = (data) => {
         // console.log(data)
@@ -33,7 +46,7 @@ const AddItems = () => {
     return (
         <div>
             <form className='d-flex flex-column w-50 mx-auto mt-4' onSubmit={handleSubmit(onSubmit)}>
-                <input className='mb-2' placeholder='name' {...register("name", { required: true, maxLength: 20 })} />
+                <input className='mb-2' placeholder='Product Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='description' {...register("description")} />
                 <input className='mb-2' value={user?.email} placeholder='Price' type="email" {...register("email")} readOnly />
 
@@ -41,7 +54,7 @@ const AddItems = () => {
                 <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
                 <input className='mb-2' placeholder='Price' type="number" {...register("Price")} />
                 <input className='mb-2' placeholder='photourl'  {...register("img")} />
-                <input className='mb-2' type="submit" value="Add Service" />
+                <input className='mb-2' type="submit" value="Add Mobile" />
             </form>
         </div>
     )

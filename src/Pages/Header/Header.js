@@ -39,7 +39,7 @@ const Header = () => {
                             <Link to="/blogs">Blogs</Link>
                             {
                                 user ?
-                                    <button onClick={() => signOut(auth)} style={{ color: "yellow" }} className='bg-info fw-bold border-0'>SignOut</button>
+                                    <button onClick={() => signOut(auth)} style={{ color: "yellow" }} className='bg-dark fw-bold border-0'>SignOut</button>
                                     :
                                     <Link to="/login">Login</Link>
 

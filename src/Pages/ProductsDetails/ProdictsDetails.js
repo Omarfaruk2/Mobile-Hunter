@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 import useProductsDetails from '../hooks/useProductsDetails'
 import "./Products.css"
 
@@ -8,9 +9,19 @@ const ProdictsDetails = () => {
 
     const { id } = useParams()
     const [product, setProduct] = useProductsDetails(id)
-
     const { name, img, Price, description, _id, quantity } = product
-    // let { quantity } = product
+
+
+
+    if (!product) {
+        return (
+            <div className='loginSpiner g-3'>
+                <Spinner className='mx-2' animation="grow" variant="primary" />
+                <Spinner className='mx-2' animation="grow" variant="info" />
+                <Spinner className='mx-2' animation="grow" variant="warning" />
+            </div>
+        )
+    }
 
     const handleDelivered = (id) => {
         const fieldQuantity = product.quantity
@@ -76,9 +87,9 @@ const ProdictsDetails = () => {
 
     return (
         <>
-            <h2>{name}</h2>
-            <Card className='mx-auto' style={{ width: '20rem' }}>
-                <Card.Img variant="top" src={img} />
+
+            <Card className='mx-auto px-3 mt-4' style={{ width: '20rem' }}>
+                <Card.Img variant="top" className='w-100' src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <h4>Price: ${Price}</h4>

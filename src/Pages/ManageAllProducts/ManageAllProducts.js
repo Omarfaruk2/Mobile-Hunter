@@ -2,15 +2,16 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-// import { useInventory } from '../hooks/useInventory'
 import useInventory from '../hooks/useInventory'
 
 const ManageAllProducts = ({ product }) => {
+
 
     const navigate = useNavigate()
 
     const [products, setProducs] = useInventory()
     const { Price, description, quantity, supliarName, name, img, _id } = product || {}
+
 
     const handleDeleted = (id) => {
 
@@ -38,8 +39,8 @@ const ManageAllProducts = ({ product }) => {
     }
 
     return (
-        <div className='col-lg-4'>
-            <Card className='mx-auto' style={{ width: '18rem' }}>
+        <div className='col-lg-4 bg-light p-3'>
+            <Card className='mx-auto p-3' style={{ width: '22rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -50,7 +51,7 @@ const ManageAllProducts = ({ product }) => {
                         {description}
                     </Card.Text>
                     <Button onClick={() => handleUpdateItem(_id)} variant="outline-warning">Add Quantity</Button>
-                    <Button onClick={() => handleDeleted(_id)} variant="outline-danger">Delete  Items</Button>
+                    <Button onClick={() => handleDeleted(_id)} className="mx-1" variant="outline-danger">Delete  Items</Button>
                 </Card.Body>
             </Card>
         </div>

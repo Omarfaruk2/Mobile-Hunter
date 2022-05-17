@@ -11,8 +11,6 @@ const InventoryItems = () => {
     return (
         <div>
             <h3 className='text-center mt-3'>OUR INVENTORY ITEMS </h3>
-            <h2>Products : {products.length}</h2>
-
             <div className='row m-0 p-0'>
                 {
                     products.slice(0, 6).map(product =>
@@ -21,7 +19,9 @@ const InventoryItems = () => {
                             key={product._id}
                         ></SingleInventory>)
                 }
-                <ManageButton></ManageButton>
+               <div className='w-100 text-center'>
+               <ManageButton></ManageButton>
+               </div>
             </div>
         </div>
     )
@@ -36,7 +36,7 @@ export default InventoryItems
      
 //         "Price":"300",
 //         "description": "Samsung Galaxy A73 5G comes with 6.7 inches Full HD+ Super AMOLED Plus screen. It has a center punch-hole front camera design. The back camera is of Quad 108+12+5+5 with PDAF, OIS, ultrawide, depth sensor, dedicated macro camera etc",
-//         "quantity":25,
+//         "quantity":"25",
 //         "supliarName": "Samsung",
 //         "name": "Samsung Galaxy A73 5G",
 //         "img": "https://www.mobiledokan.com/wp-content/uploads/2022/04/Samsung-Galaxy-A73-5G.jpg"

@@ -1,7 +1,4 @@
 import React from 'react'
-import { Spinner } from 'react-bootstrap'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import auth from '../../firebase.init'
 import InventoryItems from '../InventoryItems/InventoryItems'
 import SingleInventory from '../SingleInventory/SingleInventory'
 import Upcomming from '../Upcomming/Upcomming'
@@ -10,14 +7,10 @@ import "./Home.css"
 
 
 const Home = () => {
-    const [user, loading, error] = useAuthState(auth)
 
-    if (loading) {
-        <Spinner animation="border" variant="primary" />
-    }
 
     return (
-        <div>
+        <div className='bg-light'>
 
             <div className='banner-section'>
                 <div className="row m-0 container mx-auto">
