@@ -49,18 +49,10 @@ const ProdictsDetails = () => {
     const handleQuantitySubmit = (event) => {
 
         event.preventDefault()
-        let fieldQuantity = parseInt(product.quantity)
-        let inputQuantity = parseInt(event.target.updatequantity.value)
-
-
-        console.log(fieldQuantity, inputQuantity)
-
-
+        const fieldQuantity = parseInt(product.quantity)
+        const inputQuantity = parseInt(event.target.updatequantity.value)
         const addQuantity = parseInt(inputQuantity) + parseInt(fieldQuantity)
-
         const updateQuantity = { addQuantity }
-
-        console.log(updateQuantity, "upQuantity")
 
         const url = `http://localhost:5000/inventory/${id}`
         fetch(url, {
@@ -69,6 +61,7 @@ const ProdictsDetails = () => {
                 "content-type": "application/json",
             },
             body: JSON.stringify(updateQuantity)
+            // body: JSON.stringify(updateQuantity)
         })
 
             .then((res) => res.json())
@@ -77,7 +70,7 @@ const ProdictsDetails = () => {
                     const quantity = updateQuantity.addQuantity
                     const newProduct = { ...product, quantity }
 
-                    console.log(newProduct, "new")
+
                     setProduct(newProduct)
                     event.target.reset()
                 }
