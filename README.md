@@ -1,5 +1,5 @@
 ## Project Name: Mobile WareHouse
-## Live site Link:
+## Live site Link: "https://assigment-11-d5db3.web.app/"
 ## short descpription  :
 Mobile websites are responsive sites that automatically scale to fit the screen size of your viewer's device. The advantages of having an app are that it allows you to send push notifications to your customers (with their permission, of course) and often can be used offline.
 
@@ -11,4 +11,4 @@ Mobile websites are responsive sites that automatically scale to fit the screen 
 *It is not a  complex because it uses its coding.
 
 ## stackoverflow problem:
- "https://stackoverflow.com/questions/ask/nodeproblem"
+ "https://stackoverflow.com/questions/72dksfj7778/add-the-file-name-of-a-file-on-windows-explorer-to-a-windows-form-list-box-on-de"
