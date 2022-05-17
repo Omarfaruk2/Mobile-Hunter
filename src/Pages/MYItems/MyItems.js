@@ -13,7 +13,7 @@ const MyItems = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/myitems?email=${user?.email}`
+        const url = `https://enigmatic-forest-42494.herokuapp.com/myitems?email=${user?.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItems(data))
@@ -23,7 +23,7 @@ const MyItems = () => {
 
         const proceed = window.confirm("Are you sure for delete")
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
             fetch(url, {
                 method: "DELETE",
             })

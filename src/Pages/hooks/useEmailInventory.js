@@ -7,7 +7,7 @@ const useEmailInventory = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
         const email = user?.email
-        fetch(`http://localhost:5000/inventory?email=${email}`)
+        fetch(`https://enigmatic-forest-42494.herokuapp.com/inventory?email=${email}`)
             .then(res => res.json())
             .then(data => setItems(data))
         // console.log(data)

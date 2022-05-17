@@ -27,7 +27,7 @@ const ProdictsDetails = () => {
         const fieldQuantity = product.quantity
         const addQuantity = fieldQuantity - 1
         const updateQuantity = { addQuantity }
-        const url = `http://localhost:5000/inventory/${id}`
+        const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
 
         fetch(url, {
             method: "PUT",
@@ -53,7 +53,7 @@ const ProdictsDetails = () => {
         const addQuantity = parseInt(inputQuantity) + parseInt(fieldQuantity)
         const updateQuantity = { addQuantity }
 
-        const url = `http://localhost:5000/inventory/${id}`
+        const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -117,7 +117,7 @@ export default ProdictsDetails
 // const fieldQuantity = product.quantity
 // const addQuantity = fieldQuantity - 1
 // const updateQuantity = { addQuantity }
-// const url = `http://localhost:5000/inventory/${id}`
+// const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
 // // console.log(url)
 // fetch(url, {
 //     method: "PUT",

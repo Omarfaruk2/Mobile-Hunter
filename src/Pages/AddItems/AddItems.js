@@ -27,7 +27,7 @@ const AddItems = () => {
 
     const onSubmit = (data) => {
 
-        const url = "http://localhost:5000/inventory"
+        const url = "https://enigmatic-forest-42494.herokuapp.com/inventory"
         fetch(url, {
             method: 'POST',
             headers: {

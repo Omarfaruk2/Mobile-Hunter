@@ -30,14 +30,14 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/inventory" element={
-          // <RequireAuth>
-          <AllProdictsmanage />
-          // </RequireAuth>
+          <RequireAuth>
+            <AllProdictsmanage />
+          </RequireAuth>
         } />
         <Route path="/inventory/:id" element={
-          // <RequireAuth>
-          <ProdictsDetails />
-          // </RequireAuth>
+          <RequireAuth>
+            <ProdictsDetails />
+          </RequireAuth>
         } />
         <Route path="/myitems" element={<MyItems />} />
         <Route path="/myitem" element={<Myitem />} />
