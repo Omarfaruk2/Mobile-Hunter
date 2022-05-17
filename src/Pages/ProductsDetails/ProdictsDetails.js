@@ -88,7 +88,7 @@ const ProdictsDetails = () => {
                     <h4>Price: ${Price}</h4>
                     <h4>Quantity: {quantity}</h4>
                     <Card.Text>
-                        {description}
+                        <b>Description</b>:{description}
                     </Card.Text>
                     <Button className='w-100' onClick={() => handleDelivered(_id)} variant="outline-secondary">Delivired Items</Button>
                 </Card.Body>
