@@ -11,6 +11,7 @@ const AllProdictsmanage = () => {
             <div className='loginSpiner g-3'>
                 <Spinner className='mx-2' animation="grow" variant="primary" />
                 <Spinner className='mx-2' animation="grow" variant="info" />
+                <Spinner className='mx-2' animation="grow" variant="success" />
                 <Spinner className='mx-2' animation="grow" variant="warning" />
             </div>
         )
