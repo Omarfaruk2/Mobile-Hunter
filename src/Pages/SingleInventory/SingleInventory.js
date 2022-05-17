@@ -1,10 +1,16 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const SingleInventory = ({ product }) => {
-    // const { name } = product || {}
+    const navigate = useNavigate()
 
-    const { Price, description, quantity, supliarName, name, img } = product || {}
+    const { Price, description, quantity, supliarName, name, img, _id } = product || {}
+
+    const handleDetails = (id) => {
+        navigate(`/inventory/${id}`)
+
+    }
 
     return (
         <div className='col-lg-4'>
@@ -13,11 +19,12 @@ const SingleInventory = ({ product }) => {
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <h4>Price: ${Price}</h4>
+                    <h4>SupliarName: {supliarName}</h4>
+                    <h4>Quantity: {quantity}</h4>
                     <Card.Text>
                         {description}
                     </Card.Text>
-                    <Button variant="primary">Stock Update</Button>
-                    <Button className='ms-3' variant="primary">Delete Product</Button>
+                    <Button className='w-100' variant="outline-info" onClick={() => handleDetails(_id)}>Stock Update</Button>
                 </Card.Body>
             </Card>
         </div>

@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 
-const InvertoryHooks = () => {
-
+const useInventory = () => {
     const [products, setProducs] = useState([])
 
     useEffect(() => {
-        fetch("product.json")
-            .then(res => res?.json())
+        fetch("http://localhost:5000/inventory")
+            .then(res => res.json())
             .then(data => setProducs(data))
-    }, [])
+    }, [products])
 
     return [products, setProducs]
 }
 
-export default InvertoryHooks
+export default useInventory
+
