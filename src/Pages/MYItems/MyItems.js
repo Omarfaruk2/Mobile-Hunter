@@ -19,8 +19,8 @@ const MyItems = () => {
             .then(data => setItems(data))
     }, [user?.email])
 
-    const handleDeleteditems = (id) => {
 
+    const handleDeleteditems = (id) => {
         const proceed = window.confirm("Are you sure for delete")
         if (proceed) {
             const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
@@ -36,8 +36,9 @@ const MyItems = () => {
 
                 })
         }
-
     }
+
+
     const handleDetailsitem = (id) => {
         navigate(`/inventory/${id}`)
 

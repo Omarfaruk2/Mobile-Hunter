@@ -19,16 +19,7 @@ const Login = () => {
     const navigate = useNavigate()
 
     let location = useLocation()
-    let from = location.state?.from?.pathname || "/"
-
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true })
-
-        }
-    }, [from, navigate, user])
-
-
+    let from = location.state.from.pathname || "/"
 
 
     if (loading) {
@@ -37,9 +28,16 @@ const Login = () => {
                 <Spinner className='mx-2' animation="grow" variant="primary" />
                 <Spinner className='mx-2' animation="grow" variant="secondary" />
                 <Spinner className='mx-2' animation="grow" variant="success" />
+                <Spinner className='mx-2' animation="grow" variant="success" />
             </div>
         )
     }
+
+    if (user) {
+        navigate(from, { replace: true })
+
+    }
+
     let errorElement
 
     if (error) {

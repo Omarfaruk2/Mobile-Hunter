@@ -1,5 +1,7 @@
 
 import './App.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'

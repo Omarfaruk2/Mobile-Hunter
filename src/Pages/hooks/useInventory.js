@@ -7,7 +7,7 @@ const useInventory = () => {
         fetch("https://enigmatic-forest-42494.herokuapp.com/inventory")
             .then(res => res.json())
             .then(data => setProducs(data))
-    }, [products])
+    }, [])
 
     return [products, setProducs]
 }

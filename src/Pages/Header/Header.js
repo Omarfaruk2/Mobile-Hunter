@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth'
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar, Spinner } from 'react-bootstrap'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link } from 'react-router-dom'
 import auth from '../../firebase.init'
@@ -14,6 +14,14 @@ const Header = () => {
 
     }
     if (loading) {
+
+        return (
+            <div className='loginSpiner g-3'>
+                <Spinner className='mx-2' animation="grow" variant="primary" />
+                <Spinner className='mx-2' animation="grow" variant="info" />
+                <Spinner className='mx-2' animation="grow" variant="warning" />
+            </div>
+        )
 
     }
     return (

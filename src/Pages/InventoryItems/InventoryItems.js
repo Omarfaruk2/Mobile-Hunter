@@ -1,4 +1,7 @@
 import React from 'react'
+import { Spinner } from 'react-bootstrap'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init'
 import useInventory from '../hooks/useInventory'
 // import ManageAllProducts from '../ManageAllProducts/ManageAllProducts'
 import ManageButton from '../ManageAllProducts/ManageButton'
@@ -7,6 +10,18 @@ import SingleInventory from '../SingleInventory/SingleInventory'
 const InventoryItems = () => {
 
     const [products] = useInventory()
+
+    const [user, loading, error] = useAuthState(auth)
+    
+    if(loading){
+        return (
+            <div className='loginSpiner g-3'>
+                <Spinner className='mx-2' animation="grow" variant="primary" />
+                <Spinner className='mx-2' animation="grow" variant="info" />
+                <Spinner className='mx-2' animation="grow" variant="warning" />
+            </div>
+        )
+    }
 
     return (
         <div>

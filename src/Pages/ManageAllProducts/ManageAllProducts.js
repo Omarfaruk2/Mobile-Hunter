@@ -39,8 +39,8 @@ const ManageAllProducts = ({ product }) => {
     }
 
     return (
-        <div className='col-lg-4 bg-light p-3'>
-            <Card className='mx-auto p-3' style={{ width: '22rem' }}>
+        <div data-aos="zoom-out-left" className='col-lg-4 bg-light p-3'>
+            <Card data-aos="zoom-out-left" className='mx-auto p-3' style={{ width: '22rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

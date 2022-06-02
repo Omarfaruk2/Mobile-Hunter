@@ -25,7 +25,7 @@ const Home = () => {
                 </div>
             </div>
             <InventoryItems></InventoryItems>
-            <SingleInventory></SingleInventory>
+            {/* <SingleInventory></SingleInventory> */}
             <Upcomming></Upcomming>
 
 

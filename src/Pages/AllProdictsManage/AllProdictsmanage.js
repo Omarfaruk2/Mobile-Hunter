@@ -18,7 +18,8 @@ const AllProdictsmanage = () => {
     }
     return (
         <div className='mt-4'>
-            <div className='row m-0 p-0'>
+            <div data-aos="fade-up"
+                data-aos-duration="3000" className='row m-0 p-0'>
                 {
                     products.map(product => <ManageAllProducts
                         product={product}

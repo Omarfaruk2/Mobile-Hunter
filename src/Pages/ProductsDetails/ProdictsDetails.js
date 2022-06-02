@@ -4,8 +4,12 @@ import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import useProductsDetails from '../hooks/useProductsDetails'
 import "./Products.css"
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init'
 
 const ProdictsDetails = () => {
+
+    const [user, loading, error] = useAuthState(auth)
 
     const { id } = useParams()
     const [product, setProduct] = useProductsDetails(id)
@@ -13,7 +17,8 @@ const ProdictsDetails = () => {
 
 
 
-    if (!product) {
+    if (!product || loading) {
+
         return (
             <div className='loginSpiner g-3'>
                 <Spinner className='mx-2' animation="grow" variant="primary" />
