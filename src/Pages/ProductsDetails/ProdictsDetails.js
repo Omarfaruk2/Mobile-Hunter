@@ -32,8 +32,10 @@ const ProdictsDetails = () => {
         const fieldQuantity = product.quantity
         const addQuantity = fieldQuantity - 1
         const updateQuantity = { addQuantity }
-        const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
 
+        console.log(updateQuantity, fieldQuantity)
+
+        const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
         fetch(url, {
             method: "PUT",
             headers: {
@@ -55,6 +57,9 @@ const ProdictsDetails = () => {
         event.preventDefault()
         const fieldQuantity = parseInt(product.quantity)
         const inputQuantity = parseInt(event.target.updatequantity.value)
+
+        // console.log(fieldQuantity, inputQuantity, "number")
+
         const addQuantity = parseInt(inputQuantity) + parseInt(fieldQuantity)
         const updateQuantity = { addQuantity }
 
