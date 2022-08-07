@@ -44,17 +44,17 @@ const AddItems = () => {
 
     }
     return (
-        <div>
-            <form className='d-flex flex-column w-50 mx-auto mt-4' onSubmit={handleSubmit(onSubmit)}>
+        <div className='addItem-div '>
+            <form className='d-flex flex-column w-50 mx-auto mt-4 additems-form' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Product Name' {...register("name", { required: true, maxLength: 20 })} />
-                <textarea className='mb-2' placeholder='description' {...register("description")} />
+                <textarea className='mb-2' placeholder='Description' {...register("description")} />
                 <input className='mb-2' value={user?.email} placeholder='Price' type="email" {...register("email")} readOnly />
 
                 <input className='mb-2' placeholder='Supliar Name' type="text" {...register("supliarName")} />
                 <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
                 <input className='mb-2' placeholder='Price' type="number" {...register("Price")} />
-                <input className='mb-2' placeholder='photourl'  {...register("img")} />
-                <input className='mb-2' type="submit" value="Add Mobile" />
+                <input className='mb-2' placeholder='Photourl'  {...register("img")} />
+                <input className='mb-2 bb' type="submit" value="Add Mobile" />
             </form>
         </div>
     )
