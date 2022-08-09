@@ -18,6 +18,8 @@ import MyItems from './Pages/MYItems/MyItems'
 import Notfound from './Pages/NOtFound/Notfound'
 import Blogs from './Pages/Blogs/Blogs'
 import Myitem from './Pages/Myitem/Myitem'
+import { Suspense } from 'react'
+import { Spinner } from 'react-bootstrap'
 
 function App() {
   return (
@@ -33,7 +35,11 @@ function App() {
         } />
         <Route path="/inventory" element={
           <RequireAuth>
-            <AllProdictsmanage />
+            <Suspense fallback={<Spinner className='mx-2' animation="grow" variant="primary" />
+            }>
+              <AllProdictsmanage />
+            </Suspense>
+
           </RequireAuth>
         } />
         <Route path="/inventory/:id" element={

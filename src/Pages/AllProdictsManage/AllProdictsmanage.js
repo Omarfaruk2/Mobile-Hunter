@@ -4,9 +4,9 @@ import useInventory from '../hooks/useInventory'
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts'
 
 const AllProdictsmanage = () => {
-    const [products] = useInventory()
+    const [products, error] = useInventory()
 
-    if (products.length === 0) {
+    if (products.length === 0 || error) {
         return (
             <div className='loginSpiner g-3'>
                 <Spinner className='mx-2' animation="grow" variant="primary" />

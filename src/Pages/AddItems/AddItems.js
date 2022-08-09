@@ -39,6 +39,7 @@ const AddItems = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId);
+                data = {}
                 navigate('/inventory')
             })
 

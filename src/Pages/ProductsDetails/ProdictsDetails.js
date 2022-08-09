@@ -33,9 +33,11 @@ const ProdictsDetails = () => {
         const addQuantity = fieldQuantity - 1
         const updateQuantity = { addQuantity }
 
-        console.log(updateQuantity, fieldQuantity)
+        console.log(updateQuantity, addQuantity, fieldQuantity)
+        console.log(id)
 
         const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/${id}`
+        // const url = `https://enigmatic-forest-42494.herokuapp.com/inventory/62efc54fc35fc4a73b1242e0`
         fetch(url, {
             method: "PUT",
             headers: {
@@ -86,16 +88,16 @@ const ProdictsDetails = () => {
             })
     }
 
-
     return (
-        <>
+        <div className='mobile-card'>
 
-            <Card className='mx-auto px-3 mt-4' style={{ width: '20rem' }}>
+            <Card className='mx-auto px-3 mt-4 ' style={{ width: '20rem' }}>
                 <Card.Img variant="top" className='w-100' src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <h4>Price: ${Price}</h4>
                     <h4>Quantity: {quantity}</h4>
+
                     <Card.Text>
                         <b>Description</b>:{description}
                     </Card.Text>
@@ -103,19 +105,19 @@ const ProdictsDetails = () => {
                 </Card.Body>
             </Card>
 
-            <div className='text-center'>
+            <div className='text-center text-light'>
                 <h3 >Update your product quantity</h3>
 
                 <form onSubmit={handleQuantitySubmit}>
-                    <div className="mb-3 form-check">
-                        <input type="number" name="updatequantity" id="" />
+                    <div className="mb-3 form-check ">
+                        <input className='w-25 bg-dark text-light fw-bold p-2 h5' type="number" name="updatequantity" id="" />
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-dark w-25 pl-4">Submit</button>
                 </form>
             </div>
 
 
-        </>
+        </div>
     )
 }
 
